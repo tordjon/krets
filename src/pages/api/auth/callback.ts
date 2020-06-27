@@ -14,27 +14,5 @@ const createIfNotPresent = async (id: string) => {
 };
 
 export default async function callback(req, res) {
-  try {
-    await auth0.handleCallback(req, res, {
-      onUserLoaded: async (req, res, session, state) => {
-        
-        const { user } = session;
-
-
-        await createIfNotPresent(user.sub);
-
-        return {
-          ...session,
-          user: {
-            ...session.user,
-            age: 20
-          }, 
-          redirectTo: "/"
-        };
-      }
-    });
-  } catch (error) {
-
-    res.status(error.status || BAD_REQUEST).end(error.message);
-  }
+  console.log("heio")
 }
