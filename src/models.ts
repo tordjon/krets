@@ -1,5 +1,5 @@
 export type Emotion =
-    ':-)' | ':-|' | ':-('
+    ':-)' | ':-|' | ':-['
 
 export interface ReseponseModel {
     id?: string,
